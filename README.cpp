@@ -65,24 +65,30 @@ void FormalShow()  // lastname, firstname format
  
 };
  //3.move class 
-  class Move {
+class Move {
  private:
- double x;
- double y;
+	 double x;
+	double y;
  public:
- Move(double a = 0, double b = 0);// sets x, y to a, b
-{x=a;y=b;}
- showmove() c// shows current x, y values Move
-{cout<<"x coord"+x+"y coord"+y;}
-Move  add(const Move & m) c // this function adds x of m to x of invoking object to get new x, // adds y of m to y of invoking object to get new y, creates a new // move object initialized to new x, y values and returns it
-{ x=x+m.x;
-y=y+m.y;
-Move new;
-new.x=x;
-new.y=y;
-return new  ;
+	Move(double a = 0, double b = 0)// sets x, y to a, b
+	{
+		x=a;y=b;
+    }
+	 void showmove() // shows current x, y values Move
+	{
+		cout<<"x coord"<<x<<"y coord"<<y<<endl;
+	 }
+Move  add(const Move & m)  // this function adds x of m to x of invoking object to get new x, // adds y of m to y of invoking object to get new y, creates a new // move object initialized to new x, y values and returns it
+	{ 
+		x=x+m.x;
+		y=y+m.y;
+		//Move new;
+		//new.x=x;
+		//new.y=y;
+		return Move(x+m.x,y+m.y) ;
 }
- reset(double a = 0, double b = 0){
- x=a;y=b;
+void reset(double a = 0, double b = 0)
+ {
+		 x=a;
+		 y=b;
  }};
-
