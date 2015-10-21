@@ -92,3 +92,10 @@ void reset(double a = 0, double b = 0)
 		 x=a;
 		 y=b;
  }};
+void main (){
+Move a(3,2);
+	a.showmove();
+   a.reset(3,4);
+   a.showmove();
+system("pause");
+}
