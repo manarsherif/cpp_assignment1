@@ -33,36 +33,36 @@ public:
 };
 
 //1.person class 
-	class Person {
+class Person {
  private:
- static const LIMIT = 25;
+	 static const int LIMIT = 25;
  string lname; // Person’s last name 
 char fname[LIMIT]; // Person’s first name 
 public: 
-Person() {
-lname = "";
- fname[0] = '\0'; } // #1 
-Person(const string & ln, const char * fn = "Heyyou"); // #2 
+	Person() {
+	lname = " ";
+	fname[0] = '\0'; } // #1 
+	Person(const string & ln, const char * fn = "Heyyou"){
+		lname=ln;
+		for(int i=0;i<sizeof(fn);i++){
+		 fname[i]=fn[i];}
+		fname[sizeof(fn)]='\0';
+
+	}// #2 
 // the following methods display lname and fname 
 void Show()  // firstname lastname format 
 {
-	cout<<fname+lname;
+	cout<<fname<<" "<<lname;
 }
 void FormalShow()  // lastname, firstname format
 {
 	cout<<lname+","+fname;
 }
-Person(){
-	fname=" ";
-lname=" ";
-}
+
  Person(string s){
 	lname=s;
 } 
- Person(string s,string b) {
-fname=s;
-lname=b;
-}
+ 
 };
  //3.move class 
   class Move {
