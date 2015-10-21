@@ -1,26 +1,36 @@
 # cpp_assignment1
 //1.class BankAccount 
-Class BankAccount{
+# include "string"
+using namespace std;
+class BankAccount{
 private:
  string name;
  string account_number;
  int  balance;
 public:
-BankAccount(){
-name=none;
-account_number="0";
-balance=0;}
-BankAccount(string n, string num, int b){
-name=n;
-account_number=num;
-balance=b;}
-void display(){
-cout<<"Name: "+name+"Account number: "+account_number+"Balance: "+balance;}
-}
-void deposit_money(int d){
-	balance=balance+d;}
-void withdraw_money(int w){
-balance=balance-w;}
+	BankAccount(){
+		name=" ";
+		account_number="1000";
+		balance=0;
+	}
+	BankAccount(string n, string num, int b){
+		name=n;
+		account_number=num;
+		balance=b;
+	}
+	void display(){
+		//char *intStr = itoa(balance);
+        string str = to_string(balance);
+		cout<<"Name: "+name+"Account number: "+account_number+"Balance: "+str;
+	}
+	void deposit_money(int d){
+		balance=balance+d;}
+	void withdraw_money(int w){
+		if(balance >w)
+	balance=balance-w;
+		else 
+	cout<<"error please the withdrawn amount is more than your balance please try again";}
+};
 
 //1.person class 
 	class Person {
